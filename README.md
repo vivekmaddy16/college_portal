@@ -1,71 +1,88 @@
-# YourCampus University Website (JSP + HTML + CSS + JS)
+# Babu Banarasi Das University (BBDU) Web Portal
 
-BBDU jaisi university website ka clone-style project — original layout/structure inspired hai, lekin content/images placeholder hain jinhe aap apni university ke hisaab se replace kar sakte ho.
+A premium, highly interactive university web portal built using the JSP + Servlet + HTML + CSS + JS stack. The design is inspired by the Babu Banarasi Das University (BBDU) layout, offering a visual aesthetic with smooth animations, custom AI-generated campus images, and mobile-first responsiveness.
+
+---
+
+## 🏛️ Core Features
+
+- **Premium UI/UX**: Designed using Inter and Playfair Display fonts, custom maroon & gold color palette, glassmorphism card layouts, and sleek hover transformations.
+- **Micro-Animations**: Features custom CSS keyframe animations, scroll-triggered fade-ins, and animated statistics counters.
+- **Interactive Bento Grid**: Highlighting Campus Life (Art & Culture, Sports, Hostels, and Clubs) with a custom JavaScript tab-switching panel.
+- **Dynamic Program List & Filter**: An interactive filterable course menu showcasing all active UG/PG programs.
+- **Contact & Inquiry Pipeline**: A form validation mechanism connected to a background `ContactServlet` to capture admissions inquiries.
+- **BBDU Branding**: Seamless branding across all include components, footers, headers, and metadata descriptions.
+
+---
 
 ## 📁 Project Structure
+
 ```
 university-website/
-├── pom.xml                          # Maven config (WAR packaging)
-├── src/
-│   ├── main/
-│   │   ├── java/com/university/servlet/
-│   │   │   └── ContactServlet.java  # Handles contact/apply form POST
-│   │   └── webapp/
-│   │       ├── WEB-INF/web.xml      # Deployment descriptor
-│   │       ├── includes/
-│   │       │   ├── header.jsp
-│   │       │   └── footer.jsp
-│   │       ├── css/style.css
-│   │       ├── js/script.js
-│   │       ├── images/              # put your images here
-│   │       ├── index.jsp
-│   │       ├── about.jsp
-│   │       ├── courses.jsp
-│   │       ├── contact.jsp
-│   │       ├── apply.jsp
-│   │       └── 404.jsp
+├── pom.xml                                    # Maven Config (Tomcat/JSTL dependencies)
+├── src/main/java/com/university/servlet/
+│   └── ContactServlet.java                    # Handles admissions query form POST
+├── src/main/webapp/
+│   ├── WEB-INF/web.xml                        # Deployment descriptor
+│   ├── css/style.css                          # Premium Responsive CSS Design System
+│   ├── js/script.js                           # Interactive JavaScript & Validation
+│   ├── includes/
+│   │   ├── header.jsp                         # Header Include with scrolling marquee
+│   │   └── footer.jsp                         # Rich Footer with SVG social icons
+│   ├── images/
+│   │   ├── hero-bg.png                        # Generated grand campus view
+│   │   ├── campus-culture.png                 # Generated cultural fest art
+│   │   ├── campus-sports.png                  # Generated sports stadium
+│   │   ├── campus-hostel.png                  # Generated modern hostels
+│   │   └── campus-library.png                 # Generated library interior
+│   ├── index.jsp                              # Home Page (Stats, Placements, Bento Grid)
+│   ├── about.jsp                              # About Page (Accreditations, Values)
+│   ├── courses.jsp                            # Courses Page (Interactive Program Filter)
+│   ├── contact.jsp                            # Contact Page (Form & Embed Google Map)
+│   ├── apply.jsp                              # Admissions Registration Form
+│   └── 404.jsp                                # Animated 404 Error Page
 ```
 
-## 🛠 Prerequisites
-1. **JDK 11+** installed (`java -version` se check karo)
-2. **Apache Tomcat 10.x** (Jakarta EE / `jakarta.servlet` namespace ke liye 10.x hi lena — Tomcat 9 `javax.servlet` use karta hai)
-3. **Maven** installed (`mvn -version`)
-4. **VS Code Extensions**:
-   - Extension Pack for Java (Microsoft)
-   - Community Server Connectors (Tomcat support)
-   - (Optional) IntelliSense: "vscode-jsp" or just treat `.jsp` as HTML
+---
 
-## ▶️ Run Steps (VS Code me)
+## 🛠️ Prerequisites
 
-### Option A — Community Server Connector (easiest)
-1. VS Code me `Community Server Connectors` extension install karo
-2. Left sidebar me "Servers" panel khulega → "+" click karke Tomcat 10 add karo (apna Tomcat install path do)
-3. Project folder open karo, `pom.xml` par right-click → **Add/Remove Servers** ya seedha project ko server par right-click "Add and Publish" karo
-4. Server start karo → browser me `http://localhost:8080/university-website/` khul jayega
+1. **Java Development Kit (JDK) 11 or 17** (e.g. Eclipse Adoptium)
+2. **Apache Tomcat 10.x** (Required for `jakarta.servlet` namespace)
+3. **Apache Maven 3.6+**
 
-### Option B — Manual (Maven build + Tomcat webapps folder)
+---
+
+## ▶️ Setup & Run
+
+### 1. Build the Package
+From the project root folder, package the application into a deployable Web Archive (`.war`) file:
 ```bash
-cd university-website
 mvn clean package
-# Ye target/university-website.war banayega
-cp target/university-website.war $TOMCAT_HOME/webapps/
-$TOMCAT_HOME/bin/startup.sh    # Windows: startup.bat
 ```
-Fir browser me kholo: `http://localhost:8080/university-website/`
+This builds the package and generates `target/university-website.war`.
 
-## 🖼 Images
-`images/` folder khaali hai — placeholder hai. Apni khud ki (ya royalty-free, jaise Unsplash/Pexels se) images daal do in naamon se, ya `<img>` tags ke `src` change kar do:
-- `hero-bg.jpg`, `course-cse.jpg`, `course-ai.jpg`, `course-mba.jpg`, `course-bca.jpg`
-- `student1.jpg` ... `student4.jpg`
-- `campus-culture.jpg`, `campus-sports.jpg`, `campus-hostel.jpg`
+### 2. Deploy to Apache Tomcat
+Copy the generated WAR file into your Tomcat installation's `webapps` directory:
+```bash
+# Windows
+copy target\university-website.war C:\path\to\apache-tomcat\webapps\
+```
 
-Agar image missing hogi to `onerror` fallback se automatically ek placeholder image dikh jayega — site tootegi nahi.
+### 3. Start Tomcat
+Start your local Tomcat server:
+```bash
+# Windows
+C:\path\to\apache-tomcat\bin\startup.bat
+```
 
-## ✏️ Customize
-- **Colors/branding**: `css/style.css` me top par `:root { --primary: ...; --accent: ...; }` change karo
-- **University name/logo**: `includes/header.jsp` aur `includes/footer.jsp`
-- **Courses/Placements data**: `index.jsp` aur `courses.jsp` ke top par diya Java list/map edit karo
-- **Contact form backend**: `ContactServlet.java` me abhi console pe print ho raha hai — production me isse DB (JDBC) ya email (JavaMail) se replace karna
+### 4. Visit the Portal
+Open your web browser and navigate to:
+🔗 **[http://localhost:8080/university-website/](http://localhost:8080/university-website/)**
 
-## ⚠️ Note
-Ye project **BBDU se inspired original layout** hai — text, images, alumni names, placement figures sab placeholder/generic hain. Real BBDU ka content (text/photos) copy-paste mat karna agar site publicly deploy kar rahe ho — copyright issue ho sakta hai. Apni khud ki university ka actual data daal ke isko customize karo.
+---
+
+## ✏️ Customization & Extensibility
+
+- **Branding Colors**: Easily customize the look and feel in `css/style.css` by changing the CSS variables in the `:root` block (e.g. `--primary`, `--accent`, `--dark`).
+- **Database Connection**: In `ContactServlet.java`, replace the console log blocks (`System.out.println`) with actual JDBC statements or Hibernate calls to persist inquiries directly to a relational database (e.g., MySQL, PostgreSQL).
