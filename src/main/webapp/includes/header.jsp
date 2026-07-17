@@ -83,8 +83,8 @@
 <!-- ===== MAIN HEADER ===== -->
 <header class="main-header">
     <div class="container-wide navbar">
-        <a href="index.jsp" class="logo" aria-label="Babu Banarasi Das University Home">
-            <span class="logo-icon">🎓</span> BBD<span>UNIVERSITY</span>
+        <a href="index.jsp" class="logo" aria-label="Babu Banarasi Das University Home" style="display:flex; align-items:center;">
+            <img src="images/logo.png" alt="Babu Banarasi Das University Logo" style="height:48px; width:auto; object-fit:contain;">
         </a>
 
         <nav class="nav-links" id="navLinks">
