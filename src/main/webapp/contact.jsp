@@ -7,6 +7,7 @@
     <title>Contact Us | Babu Banarasi Das University</title>
     <meta name="description" content="Get in touch with Babu Banarasi Das University. Contact our admissions team, visit our campus, or send us a message.">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 

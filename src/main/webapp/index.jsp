@@ -9,6 +9,7 @@
     <meta name="description" content="Babu Banarasi Das University – Best Private University in Lucknow. Career-focused UG & PG programs, world-class campus, vibrant student life. Admissions Open 2026-27!">
     <meta name="keywords" content="best university Lucknow, private university Uttar Pradesh, B.Tech, BCA, MBA, MCA, BBA admission 2026, engineering college Lucknow">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 

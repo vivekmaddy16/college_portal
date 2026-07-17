@@ -7,6 +7,7 @@
     <title>About Us | Babu Banarasi Das University</title>
     <meta name="description" content="Learn about Babu Banarasi Das University — 25+ years of academic excellence, UGC recognized, NAAC accredited. Our mission, vision, and campus infrastructure.">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 

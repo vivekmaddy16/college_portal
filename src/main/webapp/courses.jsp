@@ -8,6 +8,7 @@
     <title>Courses | Babu Banarasi Das University</title>
     <meta name="description" content="Explore 60+ industry-oriented programs at Babu Banarasi Das University — B.Tech, BCA, MCA, MBA, BBA, B.Com, BA LLB and more.">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 

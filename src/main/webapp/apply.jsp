@@ -7,6 +7,7 @@
     <title>Apply Now | Babu Banarasi Das University — Admissions 2026-27</title>
     <meta name="description" content="Apply online for admission at Babu Banarasi Das University. UG & PG programs in Engineering, Management, Law, and more. Limited seats — apply now!">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
