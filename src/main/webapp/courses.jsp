@@ -16,22 +16,22 @@
 
 <%
     class Program {
-        String name, duration, category, desc;
-        Program(String name, String duration, String category, String desc) {
-            this.name = name; this.duration = duration; this.category = category; this.desc = desc;
+        String name, duration, category, desc, img;
+        Program(String name, String duration, String category, String desc, String img) {
+            this.name = name; this.duration = duration; this.category = category; this.desc = desc; this.img = img;
         }
     }
     List<Program> programs = new ArrayList<>();
-    programs.add(new Program("B.Tech - Computer Science & Engineering", "4 Years", "engineering", "Full-stack development, algorithms, cloud computing, and cyber security."));
-    programs.add(new Program("B.Tech - Artificial Intelligence", "4 Years", "engineering", "Deep learning, NLP, computer vision, and intelligent systems design."));
-    programs.add(new Program("B.Tech - Electronics & Communication", "4 Years", "engineering", "VLSI design, embedded systems, signal processing & IoT applications."));
-    programs.add(new Program("BCA", "3 Years", "computing", "Programming fundamentals, web technologies, DBMS & software engineering."));
-    programs.add(new Program("MCA", "2 Years", "computing", "Advanced software development, data science, and enterprise application design."));
-    programs.add(new Program("BBA", "3 Years", "management", "Business fundamentals, marketing, HR, and entrepreneurship essentials."));
-    programs.add(new Program("MBA", "2 Years", "management", "Finance, marketing, operations & entrepreneurship with industry internships."));
-    programs.add(new Program("B.Com (Hons)", "3 Years", "commerce", "Accounting, taxation, finance, and business law — CA foundation-ready."));
-    programs.add(new Program("BA LLB (Integrated)", "5 Years", "law", "Constitutional law, corporate law, litigation & moot court training."));
-    programs.add(new Program("B.Pharm", "4 Years", "health", "Pharmaceutical sciences, drug formulation, pharmacology & clinical research."));
+    programs.add(new Program("B.Tech - Computer Science & Engineering", "4 Years", "engineering", "Full-stack development, algorithms, cloud computing, and cyber security.", "images/course-cse.jpg"));
+    programs.add(new Program("B.Tech - Artificial Intelligence", "4 Years", "engineering", "Deep learning, NLP, computer vision, and intelligent systems design.", "images/course-ai.jpg"));
+    programs.add(new Program("B.Tech - Electronics & Communication", "4 Years", "engineering", "VLSI design, embedded systems, signal processing & IoT applications.", "images/course-ece.jpg"));
+    programs.add(new Program("BCA", "3 Years", "computing", "Programming fundamentals, web technologies, DBMS & software engineering.", "images/course-bca.jpg"));
+    programs.add(new Program("MCA", "2 Years", "computing", "Advanced software development, data science, and enterprise application design.", "images/course-cse.jpg"));
+    programs.add(new Program("BBA", "3 Years", "management", "Business fundamentals, marketing, HR, and entrepreneurship essentials.", "images/course-mba.jpg"));
+    programs.add(new Program("MBA", "2 Years", "management", "Finance, marketing, operations & entrepreneurship with industry internships.", "images/course-mba.jpg"));
+    programs.add(new Program("B.Com (Hons)", "3 Years", "commerce", "Accounting, taxation, finance, and business law — CA foundation-ready.", "images/course-mba.jpg"));
+    programs.add(new Program("BA LLB (Integrated)", "5 Years", "law", "Constitutional law, corporate law, litigation & moot court training.", "images/course-law.jpg"));
+    programs.add(new Program("B.Pharm", "4 Years", "health", "Pharmaceutical sciences, drug formulation, pharmacology & clinical research.", "images/course-pharm.jpg"));
 %>
 
 <!-- ===== HERO SUB ===== -->
@@ -67,6 +67,9 @@
         <div class="courses-grid">
             <% for (Program prog : programs) { %>
             <div class="course-card" data-category="<%= prog.category %>" style="transition: opacity 0.3s ease, transform 0.3s ease;">
+                <div class="card-img-wrap">
+                    <img src="<%= prog.img %>" alt="<%= prog.name %>" onerror="this.src='https://placehold.co/400x220/8B1A2B/ffffff?text=<%= prog.category %>'">
+                </div>
                 <div class="body">
                     <span><%= prog.duration %></span>
                     <h3><%= prog.name %></h3>

@@ -44,7 +44,7 @@
 %>
 
 <!-- ===== HERO ===== -->
-<section class="hero" id="home">
+<section class="hero" id="home" style="background: linear-gradient(135deg, rgba(15,27,45,0.72), rgba(139,26,43,0.55)), url('images/bbd-campus-hero.jpg?v=2') center/cover no-repeat;">
     <div class="container">
         <div class="hero-content">
             <h1>Best Private University<br><span>in Uttar Pradesh (India)</span></h1>
