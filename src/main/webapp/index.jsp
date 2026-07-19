@@ -200,7 +200,7 @@
                 <h2>1400+</h2>
                 <p>Participants Every Year</p>
             </div>
-            <div class="bento-card" style="grid-column: 3; grid-row: span 2;">
+            <div class="bento-card" style="grid-column: 3; grid-row: 1 / span 2;">
                 <img src="images/campus-library.png" alt="Campus Library">
                 <div class="bento-overlay"><h3>Central Library</h3><p>50,000+ volumes & digital archive</p></div>
             </div>
@@ -281,7 +281,7 @@
                 <h2>20+</h2>
                 <p>Active Student Clubs</p>
             </div>
-            <div class="bento-card" style="grid-column: 3; grid-row: span 2;">
+            <div class="bento-card" style="grid-column: 3; grid-row: 1 / span 2;">
                 <img src="images/campus-culture.png" alt="Alumni Meet">
                 <div class="bento-overlay"><h3>Alumni Network</h3><p>15,000+ strong worldwide</p></div>
             </div>
