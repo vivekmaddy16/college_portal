@@ -37,7 +37,7 @@
         }
     }
     List<Placement> placements = new ArrayList<>();
-    placements.add(new Placement("Ananya Sharma", "B.Tech (CSE)", "Amazon", "₹ 32 LPA", "images/student1.jpg"));
+    placements.add(new Placement("Ananya Singh", "B.Tech (CSE)", "Amazon", "₹ 32 LPA", "images/student1.jpg"));
     placements.add(new Placement("Rohit Verma", "B.Tech (CSE-AI)", "Microsoft", "₹ 41 LPA", "images/student2.jpg"));
     placements.add(new Placement("Priya Singh", "MCA", "Cisco", "₹ 22 LPA", "images/student3.jpg"));
     placements.add(new Placement("Karan Mehta", "BCA", "TCS", "₹ 7.5 LPA", "images/student4.jpg"));
