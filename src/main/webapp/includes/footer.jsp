@@ -48,11 +48,11 @@
             <div>
                 <h3>Examinations</h3>
                 <ul>
-                    <li><a href="#">→ Academic Calendar</a></li>
-                    <li><a href="#">→ Examination Notices</a></li>
-                    <li><a href="#">→ Result Portal</a></li>
-                    <li><a href="#">→ Student Login</a></li>
-                    <li><a href="#">→ Fee Payment</a></li>
+                    <li><a href="academic-calendar.jsp">→ Academic Calendar</a></li>
+                    <li><a href="exam-notices.jsp">→ Examination Notices</a></li>
+                    <li><a href="result-portal.jsp">→ Result Portal</a></li>
+                    <li><a href="admin-dashboard.jsp">→ Admin Dashboard</a></li>
+                    <li><a href="fee-payment.jsp">→ Fee Payment</a></li>
                 </ul>
             </div>
 

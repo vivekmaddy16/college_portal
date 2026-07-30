@@ -1,19 +1,21 @@
 package com.university.servlet;
 
+import com.university.dao.InquiryDAO;
+import com.university.model.Inquiry;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 
 /**
- * Handles the Contact Us form submission.
- * In a real project, replace the console logging below with a database
- * insert (JDBC / JPA) or an email dispatch (JavaMail) call.
+ * Handles the Contact Us and Application form submission.
+ * Persists details to the SQL database using InquiryDAO.
  */
 public class ContactServlet extends HttpServlet {
+
+    private final InquiryDAO inquiryDAO = new InquiryDAO();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -25,24 +27,30 @@ public class ContactServlet extends HttpServlet {
         String program = request.getParameter("program");
         String message = request.getParameter("message");
 
+        // Detect referring page for dynamic routing UX
+        String referer = request.getHeader("referer");
+        String redirectPage = "contact.jsp";
+        if (referer != null && referer.contains("apply.jsp")) {
+            redirectPage = "apply.jsp";
+        }
+
         // Basic server-side validation
         if (name == null || name.trim().isEmpty()
                 || email == null || email.trim().isEmpty()
                 || phone == null || phone.trim().isEmpty()) {
-            response.sendRedirect("contact.jsp?status=error");
+            response.sendRedirect(redirectPage + "?status=error");
             return;
         }
 
-        // TODO: persist to database instead of logging
-        System.out.println("=== New Contact Enquiry [" + LocalDateTime.now() + "] ===");
-        System.out.println("Name: " + name);
-        System.out.println("Email: " + email);
-        System.out.println("Phone: " + phone);
-        System.out.println("Program: " + program);
-        System.out.println("Message: " + message);
-        System.out.println("=========================================");
-
-        response.sendRedirect("contact.jsp?status=success");
+        try {
+            Inquiry inquiry = new Inquiry(name, email, phone, program, message);
+            inquiryDAO.save(inquiry);
+            response.sendRedirect(redirectPage + "?status=success");
+        } catch (Exception e) {
+            System.err.println("Error saving inquiry: " + e.getMessage());
+            e.printStackTrace();
+            response.sendRedirect(redirectPage + "?status=error");
+        }
     }
 
     @Override

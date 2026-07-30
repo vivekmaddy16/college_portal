@@ -29,11 +29,11 @@
                 </div>
                 <div class="marquee-item">
                     <span>Academic Fee Payment Portal</span>
-                    <a href="#" class="marquee-badge">Pay Now</a>
+                    <a href="fee-payment.jsp" class="marquee-badge">Pay Now</a>
                 </div>
                 <div class="marquee-item">
                     <span>University Fee Brochure 2026-27</span>
-                    <a href="#" class="marquee-badge">Download</a>
+                    <a href="academic-calendar.jsp" class="marquee-badge">Download</a>
                 </div>
                 <div class="marquee-item">
                     <span>Student Grievance Helpdesk</span>
@@ -46,11 +46,11 @@
                 </div>
                 <div class="marquee-item">
                     <span>Academic Fee Payment Portal</span>
-                    <a href="#" class="marquee-badge">Pay Now</a>
+                    <a href="fee-payment.jsp" class="marquee-badge">Pay Now</a>
                 </div>
                 <div class="marquee-item">
                     <span>University Fee Brochure 2026-27</span>
-                    <a href="#" class="marquee-badge">Download</a>
+                    <a href="academic-calendar.jsp" class="marquee-badge">Download</a>
                 </div>
                 <div class="marquee-item">
                     <span>Student Grievance Helpdesk</span>
